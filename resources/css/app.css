@@ -1,14 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Custom CSS */
-
 body {
     background: #F8F8F8;
     color: #2b2b2b;
+    font-family: 'Lato', sans-serif;
+}
+
+nav li a {
+    transition: color 0.3s ease-in-out;
+}
+
+nav li a:hover {
+    color: #FE5F1E;
 }
 
 .btn-primary {
@@ -31,4 +39,10 @@ body {
 .add-to-cart:hover {
     background: #FE5F1E;
     color: #fff;
+}
+
+.cart-btn {
+    @apply inline-block px-4 py-2 rounded-full flex items-center;
+    background-color: #FE5F1E;
+    transition: background-color 0.3s ease-in-out;
 }
