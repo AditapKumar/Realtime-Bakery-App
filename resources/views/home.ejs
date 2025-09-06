@@ -21,13 +21,14 @@
 <section class="menu container mx-auto py-8">
     <h1 class="text-xl font-bold mb-8">Our Bestsellers</h1>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-x-12 gap-y-16">
-        <div class="w-full">
-            <img class="h-40 mb-4 mx-auto" src="/img/cake1.webp" alt="Chocolate Cake">
+        <% cakes.forEach(function(cake) { %>
+            <div class="w-full">
+            <img class="h-40 mb-4 mx-auto" src="/img/<%= cake.image %>" alt="<%= cake.name %>">
             <div class="text-center">
-                <h2 class="mb-4 text-lg">Chocolate Cake</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Slice</span>
+                <h2 class="mb-4 text-lg"><%= cake.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= cake.size %></span>
                 <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹300</span>
+                    <span class="font-bold text-lg">₹<%= cake.price %></span>
                     <button class="add-to-cart">
                         <span>+</span>
                         <span class="ml-2">Add</span>
@@ -35,50 +36,7 @@
                 </div>
             </div>
         </div>
+       <% }) %>
 
-        <div class="w-full">
-            <img class="h-40 mb-4 mx-auto" src="/img/cake2.webp" alt="Red Velvet Cake">
-            <div class="text-center">
-                <h2 class="mb-4 text-lg">Red Velvet</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Slice</span>
-                <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹350</span>
-                    <button class="add-to-cart">
-                        <span>+</span>
-                        <span class="ml-2">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full">
-            <img class="h-40 mb-4 mx-auto" src="/img/cake1.webp" alt="Cheesecake">
-            <div class="text-center">
-                <h2 class="mb-4 text-lg">Cheesecake</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Slice</span>
-                <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹400</span>
-                    <button class="add-to-cart">
-                        <span>+</span>
-                        <span class="ml-2">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <div class="w-full">
-            <img class="h-40 mb-4 mx-auto" src="/img/cake2.webp" alt="Fruit Tart">
-            <div class="text-center">
-                <h2 class="mb-4 text-lg">Fruit Tart</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Slice</span>
-                <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹280</span>
-                    <button class="add-to-cart">
-                        <span>+</span>
-                        <span class="ml-2">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
