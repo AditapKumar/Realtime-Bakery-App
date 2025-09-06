@@ -1,142 +1,58 @@
 [
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10101" },
+    "_id": "66d1a1f1a1c1a1a1a1a10101",
     "name": "Chocolate Truffle Cake",
-    "image": "chocolate_truffle.png",
+    "image": "cake.png",
     "price": "450",
     "size": "medium"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10102" },
+    "_id": "66d1a1f1a1c1a1a1a1a10102",
     "name": "Red Velvet Cake",
-    "image": ".png",
+    "image": "cake.png",
     "price": "500",
     "size": "large"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10103" },
+    "_id": "66d1a1f1a1c1a1a1a1a10103",
     "name": "Black Forest Cake",
-    "image": "black_forest.png",
+    "image": "cake.png",
     "price": "400",
     "size": "medium"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10104" },
+    "_id": "66d1a1f1a1c1a1a1a1a10104",
     "name": "Pineapple Cake",
-    "image": "pineapple.png",
+    "image": "cake.png",
     "price": "350",
     "size": "small"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10105" },
+    "_id": "66d1a1f1a1c1a1a1a1a10105",
     "name": "Strawberry Cheesecake",
-    "image": "strawberry_cheesecake.png",
+    "image": "cake.png",
     "price": "600",
     "size": "large"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10106" },
+    "_id": "66d1a1f1a1c1a1a1a1a10106",
     "name": "Blueberry Muffin",
-    "image": "blueberry_muffin.png",
+    "image": "cake.png",
     "price": "120",
     "size": "small"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10107" },
+    "_id": "66d1a1f1a1c1a1a1a1a10107",
     "name": "Banana Bread",
-    "image": "banana_bread.png",
+    "image": "cake.png",
     "price": "200",
     "size": "medium"
   },
   {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10108" },
+    "_id": "66d1a1f1a1c1a1a1a1a10108",
     "name": "Croissant",
-    "image": "croissant.png",
+    "image": "cake.png",
     "price": "80",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10109" },
-    "name": "Almond Danish",
-    "image": "almond_danish.png",
-    "price": "150",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010a" },
-    "name": "Cupcake Assortment",
-    "image": "cupcake_assortment.png",
-    "price": "300",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010b" },
-    "name": "Brownie Fudge",
-    "image": "brownie.png",
-    "price": "180",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010c" },
-    "name": "Oreo Cheesecake",
-    "image": "oreo_cheesecake.png",
-    "price": "550",
-    "size": "large"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010d" },
-    "name": "Vanilla Sponge Cake",
-    "image": "vanilla_sponge.png",
-    "price": "300",
-    "size": "medium"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010e" },
-    "name": "Fruit Tart",
-    "image": "fruit_tart.png",
-    "price": "220",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a1010f" },
-    "name": "Cinnamon Roll",
-    "image": "cinnamon_roll.png",
-    "price": "90",
-    "size": "small"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10110" },
-    "name": "Lemon Drizzle Cake",
-    "image": "lemon_drizzle.png",
-    "price": "280",
-    "size": "medium"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10111" },
-    "name": "Carrot Cake",
-    "image": "carrot_cake.png",
-    "price": "320",
-    "size": "medium"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10112" },
-    "name": "Opera Cake",
-    "image": "opera_cake.png",
-    "price": "650",
-    "size": "large"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10113" },
-    "name": "Tiramisu",
-    "image": "tiramisu.png",
-    "price": "500",
-    "size": "medium"
-  },
-  {
-    "_id": { "$oid": "66d1a1f1a1c1a1a1a1a10114" },
-    "name": "Macarons Box",
-    "image": "macarons.png",
-    "price": "400",
     "size": "small"
   }
 ]
