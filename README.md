@@ -4,14 +4,13 @@ A modern, real-time bakery application built with Node.js, Express, MongoDB, EJS
 
 ## 🚀 Features
 
-- **Real-time Order Tracking** - Live updates using Socket.IO
-- **User Authentication** - Secure login/register system
-- **Shopping Cart** - Add/remove items with session persistence
-- **Order Management** - Complete order lifecycle tracking
-- **Admin Panel** - Real-time order status updates
-- **Interactive Menu** - 3D cake visualization with Three.js
-- **Responsive Design** - Mobile-friendly interface
-- **MongoDB Integration** - Persistent data storage
+- **Real-time Order Tracking**
+- **User Authentication**
+- **Shopping Cart**
+- **Order Management**
+- **Admin Panel**
+- **Responsive Design**
+- **MongoDB Integration**
 
 ## 📁 Project Structure
 
@@ -143,9 +142,7 @@ realtime-bakery-app/
 - **Real-time**: Socket.IO
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Styling**: Tailwind CSS
-- **3D Graphics**: Three.js
-- **Maps**: Leaflet
-- **Authentication**: bcryptjs, express-session
+- **Authentication**: bcryptjs
 - **Development**: Nodemon, Vite
 
 ## 🎯 Key Features Explained
