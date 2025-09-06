@@ -1,0 +1,101 @@
+<section class="admin-orders py-16">
+    <div class="container mx-auto">
+        <div class="flex items-center border-b border-gray-300 pb-4 mb-8">
+            <div class="flex items-center">
+                <img src="/img/cart-black.png" alt="">
+                <h1 class="font-bold ml-4 text-2xl">Admin - All Orders</h1>
+            </div>
+        </div>
+        
+        <% if(orders && orders.length > 0) { %>
+            <div class="grid gap-6">
+                <% orders.forEach(order => { %>
+                    <div class="bg-white shadow-md rounded-lg p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 class="text-lg font-semibold">Order #<%= order._id.toString().slice(-6) %></h3>
+                                <p class="text-gray-600">Customer: <%= order.customerId.name %></p>
+                                <p class="text-sm text-gray-500">Placed on <%= new Date(order.createdAt).toLocaleDateString() %></p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-2xl font-bold">₹<%= order.totalPrice %></span>
+                                <div class="mt-2">
+                                    <select class="status-select px-3 py-1 rounded-full text-xs font-semibold border" 
+                                            data-order-id="<%= order._id %>" 
+                                            data-current-status="<%= order.status %>">
+                                        <option value="order_placed" <%= order.status === 'order_placed' ? 'selected' : '' %>>ORDER PLACED</option>
+                                        <option value="confirmed" <%= order.status === 'confirmed' ? 'selected' : '' %>>CONFIRMED</option>
+                                        <option value="preparing" <%= order.status === 'preparing' ? 'selected' : '' %>>PREPARING</option>
+                                        <option value="out_for_delivery" <%= order.status === 'out_for_delivery' ? 'selected' : '' %>>OUT FOR DELIVERY</option>
+                                        <option value="delivered" <%= order.status === 'delivered' ? 'selected' : '' %>>DELIVERED</option>
+                                        <option value="cancelled" <%= order.status === 'cancelled' ? 'selected' : '' %>>CANCELLED</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="border-t pt-4">
+                            <h4 class="font-semibold mb-2">Items (<%= order.items.length %>)</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <% order.items.forEach(item => { %>
+                                    <span class="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                                        <%= item.item.name %> x<%= item.qty %>
+                                    </span>
+                                <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <div class="text-center py-16">
+                <h2 class="text-2xl font-bold mb-4">No orders yet</h2>
+                <p class="text-gray-600">Orders will appear here when customers place them.</p>
+            </div>
+        <% } %>
+    </div>
+</section>
+
+<script>
+// Handle status updates
+document.querySelectorAll('.status-select').forEach(select => {
+    select.addEventListener('change', async (e) => {
+        const orderId = e.target.dataset.orderId;
+        const status = e.target.value;
+        
+        try {
+            const response = await fetch('/admin/orders/status', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ orderId, status })
+            });
+            
+            if (response.ok) {
+                // Show success notification
+                const noty = new Noty({
+                    type: 'success',
+                    timeout: 2000,
+                    text: 'Order status updated successfully',
+                    progressBar: false,
+                });
+                noty.show();
+            } else {
+                throw new Error('Failed to update status');
+            }
+        } catch (error) {
+            // Revert selection on error
+            e.target.value = e.target.dataset.currentStatus;
+            
+            const noty = new Noty({
+                type: 'error',
+                timeout: 2000,
+                text: 'Failed to update order status',
+                progressBar: false,
+            });
+            noty.show();
+        }
+    });
+});
+</script>

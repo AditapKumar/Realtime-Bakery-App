@@ -1,17 +1,26 @@
-const Menu = require('../../models/menu')
+// app/http/controllers/homeController.js
 
-function homeController(){
+const fs = require('fs');
+const path = require('path');
+
+// Path to your menus.json file
+const menuPath = path.join(__dirname, '../../../menus.json');
+
+function homeController() {
     return {
-        async index(req, res) {
-            try {
-                const cakes = await Menu.find();
-                return res.render('home', { cakes : cakes }); // pass cakes to EJS
-            } catch (err) {
-                console.error(err);
-                return res.status(500).send("Error loading cakes");
-            }
+        index(req, res) {
+            // Read the JSON file
+            fs.readFile(menuPath, 'utf8', (err, data) => {
+                if (err) {
+                    console.error("Could not read menus.json file:", err);
+                    return res.render('home', { cakes: [] }); // Render with empty array on error
+                }
+                const cakes = JSON.parse(data);
+                // Pass the 'cakes' data to the home view
+                res.render('home', { cakes: cakes });
+            });
         }
     }
 }
 
-module.exports = homeController; 
+module.exports = homeController;
